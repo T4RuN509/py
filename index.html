@@ -1,12 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Download</title>
-    <meta http-equiv="refresh" content="0;url=algorithm_experiments.py" />
+  <meta charset="UTF-8">
+  <title>Download</title>
+  <script>
+    function triggerDownload(url) {
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    window.onload = function() {
+      triggerDownload("algorithm_experiments.py");
+      triggerDownload("1.docx");
+    };
+  </script>
 </head>
 <body>
-    <a href="algorithm_experiments.py" download hidden>Download</a>
 </body>
 </html>
